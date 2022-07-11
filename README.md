@@ -1,6 +1,6 @@
 # Modern Layouts - 11/50 (#Made-In-CSS-Grid)
 
-![Screenshot](./assets/images/layout-11-screenshot.png)
+![Screenshot](/assets/images/Layout-11-screenshot.png)
 
 _50 days challenge on Modern Layouts using CSS Grid._
 

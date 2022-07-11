@@ -1,7 +1,209 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* fonts */
+@font-face {
+  font-family: "OTF Glusp";
+  src: url(./assets/fonts/OTF®\ Glusp.ttf);
+}
 /* variables */
+:root {
+  --bg: #131313;
+  --primary: #ffffff;
+}
+
 /* Base Styles */
+body {
+  background-color: var(--bg);
+  color: var(--primary);
+}
+
+.container {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+header,
+footer > p {
+  font-family: "OTF Glusp";
+  font-size: 1.5rem;
+  line-height: 28px;
+  letter-spacing: 0.16em;
+}
+
+header,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+main {
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+main p {
+  font-family: "OTF Glusp";
+}
+
+main .line {
+  display: flex;
+  align-items: baseline;
+}
+
+main .sub-text p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 21px;
+  text-align: justify;
+  text-transform: uppercase;
+}
+
+main .sub-text span {
+  font-weight: 900;
+}
+
+.grid {
+  display: grid;
+}
+
 /* Mobile Styles */
+header,
+footer {
+  gap: 2rem;
+  padding: 1rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+main .image {
+  display: none;
+}
+
+main .line-1 p,
+.line-2 p {
+  font-size: 3rem;
+}
+
+main .line-3 p,
+.line-4 p {
+  font-size: 1.5rem;
+}
+
+.grid {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Small Tablet Styles */
+@media screen and (min-width: 500px) {
+  main .line-3 p,
+  .line-4 p {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 690px) {
+  .grid {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+  }
+
+  main .image {
+    display: block;
+  }
+
+  main .line {
+    flex-direction: column;
+  }
+
+  main .line-2 {
+    flex-direction: column-reverse;
+  }
+
+  .grid > * {
+    grid-column: col-start 2 / span 4;
+  }
+
+  .grid > .sub-text {
+    grid-column-start: span 3;
+    grid-column-end: col-start 6;
+  }
+}
+
+/* Larger Tablet and Laptop Styles */
+@media screen and (min-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(8, [col-start] 1fr);
+  }
+
+  .grid > * {
+    grid-column: col-start 2 / span 6;
+  }
+
+  .grid > .sub-text {
+    grid-column-end: col-start 8;
+  }
+
+  main .line p {
+    font-size: 4rem;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1380px) {
+  .grid {
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    justify-items: center;
+  }
+
+  .grid > * {
+    grid-column: col-start 2 / span 10;
+  }
+
+  .grid > .sub-text {
+    grid-column-start: span 5;
+    grid-column-end: col-start 12;
+  }
+
+  header,
+  footer {
+    padding: 3rem;
+    gap: 3rem;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  main .line p {
+    font-size: 6rem;
+  }
+
+  main .line {
+    flex-direction: row;
+  }
+}
